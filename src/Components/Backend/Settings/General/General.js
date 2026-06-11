@@ -1,14 +1,15 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, } from '@wordpress/components';
+import { PanelBody, ToggleControl, } from '@wordpress/components';
 
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import OneSetting from "../../../Common/cards/OneSetting";
 
 
 const General = ({ attributes, setAttributes }) => {
+  const { profiles=[],options={} } = attributes || {};
   const newProfile = {
-    name: 'Team',
+    name: `Team ${profiles.length + 1}`,
     designation: 'Designation',
     image: 'https://i.ibb.co/8x9xK4H/team.jpg',
     social: [
@@ -36,7 +37,7 @@ const General = ({ attributes, setAttributes }) => {
     <>
       <PanelBody
         className="bPlPanelBody"
-        title={__("Add Or Remove Profile", "info-cards")}
+        title={__("Add Or Remove Profile", "team-section")}
         initialOpen={false}
       >
         <ItemsPanel
@@ -47,8 +48,20 @@ const General = ({ attributes, setAttributes }) => {
           arrKey="profiles"
           itemLabel="Profile"
           ItemSettings={OneSetting}
-        // premiumProps={premiumProps}
         />
+      </PanelBody>
+
+      <PanelBody className="bPlPanelBody"
+        title={__("Elements", "team-section")}
+        initialOpen={false}>
+
+        <ToggleControl className='mt10' label="Show Title" checked={options.showTitle} onChange={(val) => setAttributes({ options: { ...options, showTitle: val } })} />
+        <ToggleControl className='mt10' label="Show Designation" checked={options.showDesignation} onChange={(val) => setAttributes({ options: { ...options, showDesignation: val } })} />
+        <ToggleControl className='mt10' label="Show Social" checked={options.showSocial} onChange={(val) => setAttributes({ options: { ...options, showSocial: val } })} />
+        <ToggleControl className='mt10' label="Open In New Tab" checked={options.openInNewTab} onChange={(val) => setAttributes({ options: { ...options, openInNewTab: val } })} />
+
+
+
       </PanelBody>
 
     </>

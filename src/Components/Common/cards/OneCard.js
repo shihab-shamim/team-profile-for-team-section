@@ -1,5 +1,5 @@
 export const OneCard = ({ attributes }) => {
-    const { profiles } = attributes || {};
+    const { profiles=[],options={} } = attributes || {};
 
     return (
         <section className="team_profiles-section">
@@ -12,13 +12,13 @@ export const OneCard = ({ attributes }) => {
                                 <img src={profile.image} alt={profile.name} />
                             </div>
                             <div className="team_profiles-content">
-                                <h3 className="team_profiles-title">{profile.name}</h3>
-                                <span className="team_profiles-post">{profile.designation}</span>
+                                {options?.showTitle && <h3 className="team_profiles-title">{profile.name}</h3>}
+                                {options?.showDesignation && <span className="team_profiles-post">{profile.designation}</span>}
                             </div>
                             <ul className="team_profiles-social">
-                                {profile.social?.map((item, sIndex) => (
+                                {options?.showSocial && profile.social?.map((item, sIndex) => (
                                     <li key={sIndex}>
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: item.icon }} />
+                                        <a href={item.link} target={options?.openInNewTab ? '_blank' : '_self'} rel={options?.openInNewTab ? "noopener noreferrer" : ""} dangerouslySetInnerHTML={{ __html: item.icon }} />
                                     </li>
                                 ))}
                             </ul>

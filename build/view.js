@@ -1047,7 +1047,8 @@ const OneCard = ({
   attributes
 }) => {
   const {
-    profiles
+    profiles = [],
+    options = {}
   } = attributes || {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: "team_profiles-section"
@@ -1065,18 +1066,18 @@ const OneCard = ({
     alt: profile.name
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "team_profiles-content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, options?.showTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "team_profiles-title"
-  }, profile.name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, profile.name), options?.showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "team_profiles-post"
   }, profile.designation)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "team_profiles-social"
-  }, profile.social?.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+  }, options?.showSocial && profile.social?.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: sIndex
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: item.link,
-    target: "_blank",
-    rel: "noopener noreferrer",
+    target: options?.openInNewTab ? '_blank' : '_self',
+    rel: options?.openInNewTab ? "noopener noreferrer" : "",
     dangerouslySetInnerHTML: {
       __html: item.icon
     }

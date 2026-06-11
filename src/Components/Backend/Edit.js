@@ -6,7 +6,7 @@ import { OneCard } from "../Common/cards/OneCard";
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId } = props;
-  const { purposeType } = attributes;
+
 
   return (
     <>
@@ -16,7 +16,7 @@ const Edit = (props) => {
         <Style attributes={attributes} id={`block-${clientId}`} />
 
 
-        <OneCard />
+        <OneCard attributes={attributes} />
       </div>
     </>
   );

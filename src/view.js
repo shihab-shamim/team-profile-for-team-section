@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		createRoot(blockNameEl).render(<>
 			<Style attributes={attributes} id={blockNameEl.id} />
-			<OneCard />
+			<OneCard attributes={attributes} />
 
 		</>);
 

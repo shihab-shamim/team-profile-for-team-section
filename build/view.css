@@ -17,11 +17,6 @@
 .wp-block-tsb-team-profile-pro body {
   font-family: sans-serif;
 }
-.wp-block-tsb-team-profile-pro .team_profiles-container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
 .wp-block-tsb-team-profile-pro .team_profiles-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

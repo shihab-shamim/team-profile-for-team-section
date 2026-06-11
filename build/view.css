@@ -1,0 +1,175 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.wp-block-tsb-team-profile-pro {
+  --team_profiles-primary-color: #00325a;
+  --team_profiles-secondary-color: #2f2f2f;
+  --team_profiles-accent-color: #7ab92d;
+  --team_profiles-text-color: #4e5052;
+  --team_profiles-bg-light: #f9f9f9;
+  --team_profiles-bg-hover: #f7f5ec;
+}
+.wp-block-tsb-team-profile-pro * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wp-block-tsb-team-profile-pro body {
+  font-family: sans-serif;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  /* Responsive Grid */
+}
+@media only screen and (max-width: 990px) {
+  .wp-block-tsb-team-profile-pro .team_profiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 576px) {
+  .wp-block-tsb-team-profile-pro .team_profiles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.wp-block-tsb-team-profile-pro .team_profiles-section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* background: url('img/service-section-bottom.png'); */
+  background-size: 100% 100px;
+  z-index: 99;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card {
+  padding: 30px 0 40px;
+  background: var(--team_profiles-bg-light);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 5px solid var(--team_profiles-primary-color);
+  transition: border-color 0.3s ease;
+  /* Picture Area */
+  /* Hover Effects on Picture */
+  /* Content Area */
+  /* Social Icons Area */
+  /* Reveal Social Icons on Hover */
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card:hover {
+  border-bottom-color: var(--team_profiles-secondary-color);
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-pic {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-pic::before {
+  content: "";
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--team_profiles-primary-color);
+  opacity: 1;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-pic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  z-index: 1;
+  transition: all 0.3s linear 0s;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(0.7);
+  transition: all 0.9s ease 0s;
+  box-shadow: 0 0 0 14px var(--team_profiles-bg-hover);
+  position: relative;
+  z-index: 2;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card:hover .team_profiles-pic::before {
+  height: 100%;
+  background: var(--team_profiles-secondary-color);
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card:hover .team_profiles-pic::after {
+  background: var(--team_profiles-accent-color);
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-content {
+  margin-bottom: 30px;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-content .team_profiles-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--team_profiles-text-color);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-content .team_profiles-post {
+  display: block;
+  font-size: 15px;
+  color: var(--team_profiles-text-color);
+  text-transform: capitalize;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--team_profiles-secondary-color);
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+  list-style: none;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-social li {
+  display: inline-block;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  line-height: 1;
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card .team_profiles-social li a:hover {
+  color: var(--team_profiles-secondary-color);
+  background: var(--team_profiles-bg-hover);
+}
+.wp-block-tsb-team-profile-pro .team_profiles-card:hover .team_profiles-social {
+  bottom: 0;
+}
+
+/*# sourceMappingURL=view.css.map*/

@@ -1002,7 +1002,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+/* harmony import */ var _bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/data */ "../bpl-tools/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+
 
 
 const Style = ({
@@ -1010,17 +1012,49 @@ const Style = ({
   id
 }) => {
   const {
-    colors
+    styles = {}
   } = attributes;
   const mainSl = `#${id}`;
-  const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  const team_section = `${mainSl} .team_profiles-section`;
+  const team_container = `${team_section} .team_profiles-container`;
+  const team_grid = `${team_container} .team_profiles-grid`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+		${team_grid}{
+			grid-template-columns: repeat(${styles?.columns?.desktop || 4}, 1fr);
+			column-gap: ${styles?.columnGap || 30}px;
+			row-gap: ${styles?.rowGap || 30}px;
+			
+			
+
 		
-		${blockSl} p{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
 		}
+
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+		
+		${team_grid}{
+	
+			grid-template-columns: repeat(${styles?.columns?.tablet || 2}, 1fr);
+			
+		}
+
+		
+		}
+
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+			${team_grid}{
+	
+			grid-template-columns: repeat(${styles?.columns?.mobile || 1}, 1fr);
+			
+		}
+		
+		}
+
+
+		
+		
 
 	`
     }

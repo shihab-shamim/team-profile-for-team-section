@@ -29,17 +29,17 @@ $primaryColor: #4527a4;
 
 	.team_profiles-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 30px;
+		// grid-template-columns: repeat(4, 1fr);
+		// gap: 30px;
 
-		/* Responsive Grid */
-		@media only screen and (max-width: 990px) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+		// /* Responsive Grid */
+		// @media only screen and (max-width: 990px) {
+		// 	grid-template-columns: repeat(2, 1fr);
+		// }
 
-		@media only screen and (max-width: 576px) {
-			grid-template-columns: 1fr;
-		}
+		// @media only screen and (max-width: 576px) {
+		// 	grid-template-columns: 1fr;
+		// }
 	}
 
 	.team_profiles-section {

@@ -19,19 +19,6 @@
 }
 .wp-block-tsb-team-profile-pro .team_profiles-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  /* Responsive Grid */
-}
-@media only screen and (max-width: 990px) {
-  .wp-block-tsb-team-profile-pro .team_profiles-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media only screen and (max-width: 576px) {
-  .wp-block-tsb-team-profile-pro .team_profiles-grid {
-    grid-template-columns: 1fr;
-  }
 }
 .wp-block-tsb-team-profile-pro .team_profiles-section {
   position: relative;

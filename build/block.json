@@ -118,6 +118,18 @@
         }
       ]
     },
+    "styles": {
+      "type": "object",
+      "default": {
+        "columns": {
+          "desktop": 4,
+          "tablet": 2,
+          "mobile": 1
+        },
+        "columnGap": 30,
+        "rowGap": 30
+      }
+    },
     "options": {
       "type": "object",
       "default": {

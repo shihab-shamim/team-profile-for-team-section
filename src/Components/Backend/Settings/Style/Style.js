@@ -3,7 +3,7 @@
     PanelBody,PanelRow,BorderControl , __experimentalUnitControl as UnitControl,RangeControl,
     SelectControl
   } from "@wordpress/components";
-  import { Background ,BoxControl,Label,Device,ColorControl} from "../../../../../../bpl-tools/Components";
+  import { Background ,BoxControl,Label,Device,ColorControl, ShadowControl} from "../../../../../../bpl-tools/Components";
   import { updateData } from "../../../../utils/functions";
 
   const Style = ({ attributes, setAttributes ,device}) => {
@@ -75,6 +75,8 @@
                       { label: "Scale Down", value: "scale-down" },
                       { label: "None", value: "none" },
                     ]} className="mt15" label="Image Fit" value={styles?.teamProfile?.image?.objectFit} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","objectFit")})}/> 
+                    
+                    <ShadowControl label="Image Shadow" value={styles?.teamProfile?.image?.shadow}  onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","image","shadow")})}/>
                       
 
 

@@ -1070,6 +1070,7 @@ const Style = ({
 			img{
 				object-fit: ${styles?.teamProfile?.image?.objectFit};
 				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.image?.radius)};
+				box-shadow:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(styles?.teamProfile?.image?.shadow)};
 			}
 		}
 

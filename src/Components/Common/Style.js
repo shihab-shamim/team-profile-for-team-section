@@ -1,5 +1,5 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBoxCSS, getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const {styles = {} } = attributes;
@@ -61,6 +61,7 @@ const Style = ({ attributes, id }) => {
 			img{
 				object-fit: ${styles?.teamProfile?.image?.objectFit};
 				border-radius:${getBoxCSS(styles?.teamProfile?.image?.radius)};
+				box-shadow:${getMultiShadowCSS(styles?.teamProfile?.image?.shadow)};
 			}
 		}
 

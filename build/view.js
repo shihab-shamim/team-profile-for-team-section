@@ -1022,6 +1022,14 @@ const Style = ({
     dangerouslySetInnerHTML: {
       __html: `
 
+
+		${team_section}{
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.desktop)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.desktop)}; 
+		border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+		}
+
 		${team_grid}{
 			grid-template-columns: repeat(${styles?.columns?.desktop || 4}, 1fr);
 			column-gap: ${styles?.columnGap || 30}px;
@@ -1039,6 +1047,10 @@ const Style = ({
 			grid-template-columns: repeat(${styles?.columns?.tablet || 2}, 1fr);
 			
 		}
+				${team_section}{
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.tablet)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.tablet)};
+		}
 
 		
 		}
@@ -1048,6 +1060,10 @@ const Style = ({
 	
 			grid-template-columns: repeat(${styles?.columns?.mobile || 1}, 1fr);
 			
+		}
+					${team_section}{
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.mobile)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.mobile)};
 		}
 		
 		}

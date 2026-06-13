@@ -8,14 +8,9 @@
   --team_profiles-text-color: #4e5052;
   --team_profiles-bg-light: #f9f9f9;
   --team_profiles-bg-hover: #f7f5ec;
-}
-.wp-block-tsb-team-profile-pro * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-.wp-block-tsb-team-profile-pro body {
-  font-family: sans-serif;
 }
 .wp-block-tsb-team-profile-pro .team_profiles-grid {
   display: grid;

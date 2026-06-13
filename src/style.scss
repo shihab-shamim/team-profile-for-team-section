@@ -9,16 +9,14 @@ $primaryColor: #4527a4;
 	--team_profiles-bg-light: #f9f9f9;
 	--team_profiles-bg-hover: #f7f5ec;
 
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
 
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
+	
 
-	body {
-		font-family: sans-serif;
-	}
+
 
 
 	.team_profiles-container {

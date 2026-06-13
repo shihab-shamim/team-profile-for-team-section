@@ -66,7 +66,7 @@ const General = ({ attributes, setAttributes,device }) => {
 
       <PanelBody className="bPlPanelBody"
         title={__("Layouts", "team-section")}
-        initialOpen={true}>
+        initialOpen={false}>
           <PanelRow> <Label> {__("Columns", "team-section")} </Label> <Device/> </PanelRow>
 
           <RangeControl value={styles?.columns[device]} min={1} max={12} onChange={(val)=> setAttributes({ styles: { ...styles, columns: { ...styles.columns, [device]: val } } })} />

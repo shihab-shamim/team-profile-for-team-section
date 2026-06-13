@@ -127,7 +127,54 @@
 						"mobile":1
 					},
 					"columnGap":30,
-					"rowGap":30
+					"rowGap":30,
+					"bg":{},
+					"padding":{
+						"desktop":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						},
+						"tablet":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						},
+						"mobile":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						}
+					},
+					"margin":{
+						"desktop":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						},
+						"tablet":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						},
+						"mobile":{
+							"top":"0px",
+							"right":"0px",
+							"bottom":"0px",
+							"left":"0px"
+						}	
+					},
+					"radius":{
+						"top":"0px",
+						"right":"0px",
+						"bottom":"0px",
+						"left":"0px"
+					}
 					
 					
 				}

@@ -1,19 +1,12 @@
-import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import {
-  PanelBody,
-  __experimentalBoxControl as BoxControl,
+  PanelBody,PanelRow
 } from "@wordpress/components";
-import { ColorsControl } from "../../../../../../bpl-tools/Components";
+import { Background ,BoxControl,Label,Device} from "../../../../../../bpl-tools/Components";
+import { updateData } from "../../../../utils/functions";
 
-const Style = ({ attributes, setAttributes }) => {
-  const { colors } = attributes;
-  const [values, setValues] = useState({
-    top: "50px",
-    left: "10px",
-    right: "10px",
-    bottom: "50px",
-  });
+const Style = ({ attributes, setAttributes ,device}) => {
+  const { styles={} } = attributes ||  {};
 
 
 
@@ -22,16 +15,23 @@ const Style = ({ attributes, setAttributes }) => {
       <PanelBody
       
         className="bPlPanelBody"
-        title={__("Purpose styles title", "b-blocks")}
+        title={__("Container", "team-section")}
         initialOpen={false}
       >
-        <ColorsControl
-          value={colors}
-          onChange={(val) => setAttributes({ colors: val })}
-          defaults={{ color: "black", bg: "#B1C5A4" }}
-        />
-        <BoxControl values={values} onChange={setValues} />
+        <Background label={__("Background", "team-section")} value={styles?.bg} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"bg")})}  />
+
+          <PanelRow><Label>Padding</Label><Device/></PanelRow>
+        
+        <BoxControl  values={styles?.padding[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"padding",device)})}/>
+
+            <PanelRow><Label>Margin</Label><Device/></PanelRow>
+        
+        <BoxControl  values={styles?.margin[device]} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"margin",device)})}/>
+        
+        <BoxControl className='mt15' label="Radius"  values={styles?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"radius")})}/>
+
       </PanelBody>
+
     </>
   );
 };

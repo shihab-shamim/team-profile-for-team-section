@@ -1018,6 +1018,8 @@ const Style = ({
   const team_section = `${mainSl} .team_profiles-section`;
   const team_container = `${team_section} .team_profiles-container`;
   const team_grid = `${team_container} .team_profiles-grid`;
+  const team_profile = `${team_grid} .team_profiles-card`;
+  const team_profile_pic = `${team_profile} .team_profiles-pic`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -1039,6 +1041,53 @@ const Style = ({
 
 		
 		}
+			${team_profile}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.teamProfile?.bg)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.padding)};
+		    border-bottom: ${styles?.teamProfile?.border?.width} ${styles?.teamProfile?.border?.style} ${styles?.teamProfile?.border?.color};
+
+			}
+
+			${team_profile}:hover{
+				border-bottom-color:${styles?.teamProfile?.hoverBorder} !important;
+			}
+
+			${team_profile_pic}::before{
+			background:${styles?.teamProfile?.topShape} ;
+
+			}
+
+
+			${team_profile}:hover .team_profiles-pic::before {
+			background: ${styles?.teamProfile?.hoverTopShape} !important;
+		}
+
+		${team_profile_pic}{
+			width: ${styles?.teamProfile?.image?.width};
+			height: ${styles?.teamProfile?.image?.height};
+			margin-bottom: ${styles?.teamProfile?.image?.gap}px;
+			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.image?.radius)};
+			img{
+				object-fit: ${styles?.teamProfile?.image?.objectFit};
+				border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.image?.radius)};
+			}
+		}
+
+		${team_profile}:hover .team_profiles-pic::after {
+		 	background: ${styles?.teamProfile?.image?.bg} !important;
+		}
+
+
+
+			
+
+
+
+
+
+
+
+
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 		

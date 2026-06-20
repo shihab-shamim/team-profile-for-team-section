@@ -103,19 +103,11 @@ $primaryColor: #4527a4;
 			margin-bottom: 30px;
 
 			.team_profiles-title {
-				font-size: 22px;
-				font-weight: 700;
-				color: var(--team_profiles-text-color);
-				letter-spacing: 1px;
-				text-transform: capitalize;
-				margin-bottom: 5px;
+				display: block;
 			}
 
 			.team_profiles-post {
 				display: block;
-				font-size: 15px;
-				color: var(--team_profiles-text-color);
-				text-transform: capitalize;
 			}
 		}
 
@@ -124,7 +116,8 @@ $primaryColor: #4527a4;
 			width: 100%;
 			padding: 0;
 			margin: 0;
-			background: var(--team_profiles-secondary-color);
+			display: flex;
+			align-items: center;
 			position: absolute;
 			bottom: -100px;
 			left: 0;
@@ -132,27 +125,17 @@ $primaryColor: #4527a4;
 			list-style: none;
 
 			li {
-				display: inline-block;
+				display: inline-flex;
 
 				a {
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					padding: 10px;
-					font-size: 17px;
-					color: #fff;
 					text-decoration: none;
 					transition: all 0.3s ease 0s;
 					line-height: 1;
 
-					&:hover {
-						color: var(--team_profiles-secondary-color);
-						background: var(--team_profiles-bg-hover);
-					}
-
 					svg {
-						width: 1em;
-						height: 1em;
 						fill: currentColor;
 					}
 				}

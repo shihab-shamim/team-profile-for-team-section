@@ -178,7 +178,7 @@
         "teamProfile": {
           "bg": {
             "type": "solid",
-            "color": "f9f9f9"
+            "color": "#f9f9f9"
           },
           "padding": {
             "top": "30px",
@@ -217,16 +217,91 @@
               }
             ]
           }
+        },
+        "name": {
+          "color": "#4e5052",
+          "hoverColor": "#4e5052",
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "5px",
+            "left": "0px"
+          },
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "700",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 22,
+              "tablet": 22,
+              "mobile": 20
+            },
+            "fontStyle": "normal",
+            "textTransform": "capitalize",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "1px"
+          }
+        },
+        "designation": {
+          "color": "#4e5052",
+          "hoverColor": "#4e5052",
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "400",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 15,
+              "tablet": 15,
+              "mobile": 14
+            },
+            "fontStyle": "normal",
+            "textTransform": "capitalize",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "social": {
+          "barBg": {
+            "type": "solid",
+            "color": "#2f2f2f"
+          },
+          "iconColor": "#ffffff",
+          "iconHoverColor": "#2f2f2f",
+          "iconHoverBg": {
+            "type": "solid",
+            "color": "#f7f5ec"
+          },
+          "iconSize": 17,
+          "padding": {
+            "top": "10px",
+            "right": "10px",
+            "bottom": "10px",
+            "left": "10px"
+          },
+          "gap": 0,
+          "alignment": "center"
         }
       }
     },
     "options": {
       "type": "object",
       "default": {
-        "openInNewTab": "true",
-        "showTitle": "true",
-        "showDesignation": "true",
-        "showSocial": "true"
+        "openInNewTab": true,
+        "showTitle": true,
+        "showDesignation": true,
+        "showSocial": true
       }
     }
   },

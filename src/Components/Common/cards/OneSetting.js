@@ -1,10 +1,8 @@
 import {
-    SelectControl,
     TextareaControl,
     TextControl,
     Button,
 } from "@wordpress/components";
-import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import { updateData } from "../../../utils/functions";
 import { IconLibrary, InlineDetailMediaUpload } from "../../../../../bpl-tools/Components";

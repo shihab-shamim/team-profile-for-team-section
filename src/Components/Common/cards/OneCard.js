@@ -10,7 +10,7 @@ const normalizeIconColor = (svgString) => {
         });
 };
 
-export const OneCard = ({ attributes }) => {
+export const OneCard = ({ attributes, Richtext, setAttributes }) => {
     const { profiles = [], options = {} } = attributes || {};
 
     return (
@@ -27,8 +27,14 @@ export const OneCard = ({ attributes }) => {
                                 }
                             </div>
                             <div className="team_profiles-content">
-                                {options?.showTitle && profile.name && <h3 className="team_profiles-title">{profile.name}</h3>}
-                                {options?.showDesignation && profile.designation && <span className="team_profiles-post">{profile.designation}</span>}
+                                {options?.showTitle && profile.name && !Richtext && <h3 className="team_profiles-title">{profile.name}</h3>}
+
+                                {options?.showTitle && Richtext && <Richtext tagName="h3" value={profile.name} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, name: value } : p) })} className="team_profiles-title" placeholder="Enter name" />}
+
+
+                                {options?.showDesignation && profile.designation && !Richtext && <span className="team_profiles-post">{profile.designation}</span>}
+
+                                {options?.showDesignation && Richtext && <Richtext tagName="span" value={profile.designation} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, designation: value } : p) })} className="team_profiles-post" placeholder="Enter designation" />}
                             </div>
                             {options?.showSocial && profile.social?.length > 0 && (
                                 <ul className="team_profiles-social">

@@ -69904,6 +69904,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Common_cards_OneCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Common/cards/OneCard */ "./src/Components/Common/cards/OneCard.js");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _richtext_Richtext__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../richtext/Richtext */ "./src/Components/richtext/Richtext.js");
+
 
 
 
@@ -69927,7 +69929,9 @@ const Edit = props => {
     attributes: attributes,
     id: `block-${clientId}`
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Common_cards_OneCard__WEBPACK_IMPORTED_MODULE_4__.OneCard, {
-    attributes: attributes
+    attributes: attributes,
+    Richtext: _richtext_Richtext__WEBPACK_IMPORTED_MODULE_6__["default"],
+    setAttributes: setAttributes
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.withSelect)(select => {
@@ -70671,7 +70675,9 @@ const normalizeIconColor = svgString => {
   });
 };
 const OneCard = ({
-  attributes
+  attributes,
+  Richtext,
+  setAttributes
 }) => {
   const {
     profiles = [],
@@ -70695,11 +70701,35 @@ const OneCard = ({
     className: "team_profiles-pic-placeholder"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "team_profiles-content"
-  }, options?.showTitle && profile.name && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, options?.showTitle && profile.name && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "team_profiles-title"
-  }, profile.name), options?.showDesignation && profile.designation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, profile.name), options?.showTitle && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+    tagName: "h3",
+    value: profile.name,
+    onChange: value => setAttributes({
+      ...attributes,
+      profiles: attributes.profiles.map((p, i) => i === index ? {
+        ...p,
+        name: value
+      } : p)
+    }),
+    className: "team_profiles-title",
+    placeholder: "Enter name"
+  }), options?.showDesignation && profile.designation && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "team_profiles-post"
-  }, profile.designation)), options?.showSocial && profile.social?.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+  }, profile.designation), options?.showDesignation && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+    tagName: "span",
+    value: profile.designation,
+    onChange: value => setAttributes({
+      ...attributes,
+      profiles: attributes.profiles.map((p, i) => i === index ? {
+        ...p,
+        designation: value
+      } : p)
+    }),
+    className: "team_profiles-post",
+    placeholder: "Enter designation"
+  })), options?.showSocial && profile.social?.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "team_profiles-social"
   }, profile.social.map((item, sIndex) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     key: sIndex
@@ -70872,6 +70902,44 @@ const OneSetting = props => {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add Social Link", "team-section"))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OneSetting);
+
+/***/ }),
+
+/***/ "./src/Components/richtext/Richtext.js":
+/*!*********************************************!*\
+  !*** ./src/Components/richtext/Richtext.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const Richtext = ({
+  value,
+  onChange,
+  className,
+  placeholder,
+  tagName = "p"
+}) => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+    tagName: tagName,
+    value: value,
+    onChange: onChange,
+    placeholder: placeholder,
+    className: className
+  }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Richtext);
 
 /***/ }),
 

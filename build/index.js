@@ -70992,16 +70992,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const iconColor = '#4527a4';
+// const iconColor = '#4527a4';
+
+// A single team profile: a circular avatar crowning a card, with name/role
+// lines and a solid slide-up social bar (white social dots) at the base.
 const blockIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  width: 24,
-  height: 24,
-  viewBox: "0 0 24 24",
-  fill: iconColor
-}, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-  fill: iconColor,
-  d: "M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+  width: 30,
+  height: 30,
+  viewBox: "0 0 24 24"
+}, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+  x: "4.5",
+  y: "6",
+  width: "15",
+  height: "15",
+  rx: "2.5",
+  opacity: "0.12"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+  x: "4.5",
+  y: "6",
+  width: "15",
+  height: "15",
+  rx: "2.5",
+  fill: "none",
+  strokeWidth: "1.5"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+  cx: "12",
+  cy: "6",
+  r: "4.3",
+  opacity: "0.15"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+  cx: "12",
+  cy: "6",
+  r: "3.1"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+  x: "7.5",
+  y: "12.2",
+  width: "9",
+  height: "1.5",
+  rx: "0.75"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("rect", {
+  x: "9",
+  y: "14.8",
+  width: "6",
+  height: "1.2",
+  rx: "0.6",
+  opacity: "0.5"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+  d: "M4.5 17.8H19.5V18.5A2.5 2.5 0 0 1 17 21H7a2.5 2.5 0 0 1-2.5-2.5z"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+  cx: "9",
+  cy: "19.4",
+  r: "0.85",
+  fill: "#ffffff"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+  cx: "12",
+  cy: "19.4",
+  r: "0.85",
+  fill: "#ffffff"
+}), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+  cx: "15",
+  cy: "19.4",
+  r: "0.85",
+  fill: "#ffffff"
 }));
 const verticalLineIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
